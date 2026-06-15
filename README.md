@@ -4,4 +4,6 @@ This study introduces **VIVARIA** (*Desktop Hand-Tracked Virtual Laboratory*), a
 
 The primary objective of **VIVARIA** is to provide an accessible, high-fidelity desktop simulator for preliminary training in small rodent laboratory procedures. Developed within the Unity engine and aligned with the 3Rs ethical framework (*Replacement, Reduction, Refinement*), the system aims to familiarize students with complex procedural workflows and hand-gesture interaction before they transition to *in vivo* animal training.
 
+![Manipulation](JawBlood_02.png)
+
 Architecturally, VIVARIA is designed around a modular system that decouples procedural logic from runtime orchestration, low-level interaction handlers, and user feedback. The core system relies on a *Procedure Module* structured into hierarchical tasks, steps, and precise step-conditions. At runtime, the *Orchestration Module* (via a Task Manager and Step Controller) constantly evaluates user interactions detected by the *Interaction Handler*. This handler captures markerless hand tracking data and manages grab/manipulation physics. Real-time tracking metrics are analyzed instantly: while non-critical errors trigger visual warnings through the *Feedback Module*, any critical failure automatically triggers a state rewind via the State Manager to reset the training scene safely.
